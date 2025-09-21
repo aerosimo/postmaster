@@ -93,7 +93,7 @@ The required dependencies are defined in `pom.xml`. Below are the key dependenci
    Start server and access the application:
 
     - SOAP Service: WSDL at `http://localhost:8081/postmaster/ws/postmaster?wsdl`
-    - REST Service: http://localhost:8081/postmaster/api/postman
+    - REST Service: http://localhost:8081/postmaster/api/postmaster
     - Web Interface: `http://localhost:8081/postmaster/index.jsp`
 
 ## Detailed Explanation of Components
