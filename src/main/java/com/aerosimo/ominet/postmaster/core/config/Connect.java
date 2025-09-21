@@ -31,34 +31,45 @@
 
 package com.aerosimo.ominet.postmaster.core.config;
 
+import jakarta.mail.Session;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import jakarta.mail.Session;
 
+/**
+ * Utility class to fetch JavaMail Session from JNDI safely.
+ */
 public class Connect {
 
-    private static final Logger log;
+    private static final Logger log = LogManager.getLogger(Connect.class);
 
-    static {
-        log = LogManager.getLogger(Connect.class.getName());
+    private Connect() {
+        // utility class, no instantiation
     }
 
-    static Context ctx;
-    static Context env;
-    static Session sess;
-
+    /**
+     * Returns a JavaMail Session from JNDI ("mail/aerosimo").
+     * Each call does a fresh lookup to avoid stale references.
+     *
+     * @return Jakarta Mail Session or null if lookup fails
+     */
     public static Session email() {
-        log.info("Preparing get email session");
+        log.info("Preparing to get email session from JNDI");
         try {
-            log.info("Retrieving JNDI resource to get email session");
-            ctx = new InitialContext();
-            env = (Context) ctx.lookup("java:/comp/env");
-            sess = (Session) env.lookup("mail/aerosimo");
+            Context ctx = new InitialContext();
+            try {
+                Context env = (Context) ctx.lookup("java:/comp/env");
+                Session sess = (Session) env.lookup("mail/aerosimo");
+                log.debug("Successfully retrieved mail session via JNDI");
+                return sess;
+            } finally {
+                ctx.close(); // prevent context leak
+            }
         } catch (Exception err) {
-            log.error("Email session failed with the following - {}", Connect.class.getName(), err);
+            log.error("Email session lookup failed in {}", Connect.class.getName(), err);
+            return null;
         }
-        return sess;
     }
 }
