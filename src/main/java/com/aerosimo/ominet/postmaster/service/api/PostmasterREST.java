@@ -60,10 +60,10 @@ public class PostmasterREST {
                 request.getEmailSubject() == null ||
                 request.getEmailMessage() == null) {
             log.error("Bad request - {}", PostmasterREST.class.getName(), Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\":\"Missing required fields\"}")
+                    .entity("{\"Status\":\"Missing required fields\"}")
                     .build());
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{\"error\":\"Missing required fields\"}")
+                    .entity("{\"Status\":\"Missing required fields\"}")
                     .build();
         }
 
