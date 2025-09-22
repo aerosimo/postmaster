@@ -42,7 +42,7 @@ import jakarta.ws.rs.core.MediaType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Path("/errors")   // <--- resource directly under /api/errors
+@Path("/postmaster")   // <--- resource directly under /api/postmaster
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class PostmasterREST {
@@ -54,7 +54,7 @@ public class PostmasterREST {
     }
 
     @POST
-    public Response storeError(SendEmailRequestDTO request) {
+    public Response sendMail(SendEmailRequestDTO request) {
         if (request == null ||
                 request.getEmailAddress() == null ||
                 request.getEmailSubject() == null ||
