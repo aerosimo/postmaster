@@ -46,7 +46,7 @@
     <meta content="Oracle, Java, Tomcat, Maven, Jenkins, Bitbucket, Github" name="keywords">
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
     <!-- Title -->
-    <title>Spectre | Aerosimo Ltd</title>
+    <title>Postmaster | Aerosimo Ltd</title>
     <!-- Favicon-->
     <link href="assets/img/favicon.ico" rel="shortcut icon"/>
     <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">

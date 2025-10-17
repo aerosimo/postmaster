@@ -92,8 +92,8 @@ The required dependencies are defined in `pom.xml`. Below are the key dependenci
 
    Start server and access the application:
 
-    - SOAP Service: WSDL at `http://localhost:8081/postmaster/ws/postmaster?wsdl`
-    - REST Service: http://localhost:8081/postmaster/api/postmaster
+    - SOAP Service: WSDL at `http://localhost:8081/postmaster/ws/sendemail?wsdl`
+    - REST Service: http://localhost:8081/postmaster/api/sendemail
     - Web Interface: `http://localhost:8081/postmaster/index.jsp`
 
 ## Detailed Explanation of Components
@@ -105,7 +105,7 @@ The SOAP web service is implemented in `com.aerosimo.ominet.postmaster.api.soap.
 Example sendMail SOAP Request:
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mail="https://aerosimo.com/api/ws/postmaster">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mail="https://aerosimo.com/api/ws">
     <soap:Header/>
     <soap:Body>
         <mail:sendEmail>
@@ -122,7 +122,7 @@ Example sendMail SOAP Response:
 <?xml version='1.0' encoding='UTF-8'?>
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
     <soap:Body>
-        <mail:sendEmailResponse xmlns:mail="https://aerosimo.com/api/ws/postmaster">
+        <mail:sendEmailResponse xmlns:mail="https://aerosimo.com/api/ws">
             <Status>Message sent successfully</Status>
         </mail:sendEmailResponse>
     </soap:Body>
