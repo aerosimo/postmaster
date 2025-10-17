@@ -1,4 +1,4 @@
-![MIT License](/img/MIT.png "MIT")
+![MIT License](/src/main/webapp/assets/img/MIT.png "MIT")
 
 <details>
   <summary>License</summary>
@@ -34,7 +34,7 @@ Any reliance you place on such information is therefore strictly at your own ris
 
 ---
 
-![Project Cover](/img/cover.jpg "Postmaster")
+![Project Cover](/src/main/webapp/assets/img/cover.jpg "Postmaster")
 # Postmaster
 > *Postmaster is a versatile and robust email service designed to simplify and enhance your email communication.*
 
@@ -50,7 +50,7 @@ This `README.md` gives an overview of the project structure and instructions on 
 
 ## Getting Started
 
-![Project Codes & Tasks](/img/code.jpg "Project Codes and Task")
+![Project Codes & Tasks](/src/main/webapp/assets/img/code.jpg "Project Codes and Task")
 
 ---
 
@@ -100,7 +100,7 @@ The required dependencies are defined in `pom.xml`. Below are the key dependenci
 
 ### 1. **SOAP Web Service** (JAX-WS)
 
-The SOAP web service is implemented in `com.aerosimo.ominet.postmaster.service.api.PostmasterSOAP.java`.
+The SOAP web service is implemented in `com.aerosimo.ominet.postmaster.api.soap.PostmasterSOAP.java`.
 
 Example sendMail SOAP Request:
 ```xml
@@ -131,7 +131,7 @@ Example sendMail SOAP Response:
 
 ### 2. **REST Web Service** (JAX-RS)
 
-The REST web service is implemented in `com.aerosimo.ominet.postmaster.service.api.PostmasterREST.java`.
+The REST web service is implemented in `com.aerosimo.ominet.postmaster.api.rest.PostmasterREST.java`.
 
 Example sendMail REST Request:
 ```json
@@ -149,12 +149,10 @@ Example sendMail REST Response:
       "Status": "Message sent successfully"
     }
 ```
-
-```
 ## Contributing
 
 We welcome feedback and contributions. Please open an issue or submit a pull request.
 
 ---
 
-![Aerosimo Logo.!](/img/logo.png "Aerosimo")
+![Aerosimo Logo.!](/src/main/webapp/assets/img/logo.png "Aerosimo")
