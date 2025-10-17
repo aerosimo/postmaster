@@ -46,7 +46,7 @@ import org.apache.logging.log4j.Logger;
         name = "PostmasterService",
         serviceName = "PostmasterService",
         portName = "PostmasterPort",
-        targetNamespace = "https://aerosimo.com/api/ws")
+        targetNamespace = "https://aerosimo.com/ws")
 @BindingType(SOAPBinding.SOAP12HTTP_BINDING)
 public class PostmasterSOAP {
 
